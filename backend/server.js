@@ -5,7 +5,13 @@ const cors = require('cors')
 const app = express()
 // middleware
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://open-word-chi.vercel.app'  // ← add this
+    ],
+    credentials: true
+}))
 
 const connectDB = require('./config/db')
 const bookRoute = require('./routes/bookRoute')
