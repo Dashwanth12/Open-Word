@@ -7,16 +7,22 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-        background-color: #f3efe8;
-    
-        background-image:
-            repeating-linear-gradient(90deg,
-                rgba(255, 255, 255, 0.4) 0px,
-                rgba(255, 255, 255, 0.4) 2px,
-                transparent 2px,
-                transparent 20px);
-    
-        background-size: cover;
+    background-color: #f3efe8;
+
+    background-image:
+        repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, 0.4) 0px,
+            rgba(255, 255, 255, 0.4) 2px,
+            transparent 2px,
+            transparent 20px);
+
+    background-size: cover;
+}
+
+.logo-svg {
+    width: min(90vw, 1000px);
+    height: auto;
+    display: block;
 }
 
 .flow-text {
@@ -30,7 +36,7 @@
     font-style: normal;
     letter-spacing: 12px;
 
-    transition: fill 0.8s ease;
+    transition: fill 0.6s ease;
 }
 
 .flow-text.finished {
@@ -46,8 +52,8 @@
     opacity: 0;
     transform: translateY(100px);
 
-    animation: slideUp 0.7s ease-out forwards;
-    animation-delay: 4s;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 2.2s;
 }
 
 .sub-log h3 {
@@ -66,8 +72,8 @@
     opacity: 0;
     transform: translateY(100px);
 
-    animation: slideUp 0.7s ease-out forwards;
-    animation-delay: 4.2s;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 2.4s;
 }
 
 .enter-btn button {

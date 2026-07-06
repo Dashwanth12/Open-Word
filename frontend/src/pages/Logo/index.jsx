@@ -18,7 +18,7 @@ function Logo() {
 
         animate('.flow-text', {
             strokeDashoffset: [length, 0],
-            duration: 4000,
+            duration: 2200,          // was 4000 — now faster
             ease: 'inOutSine',
             onComplete: () => {
                 text.classList.add('finished')
@@ -28,7 +28,11 @@ function Logo() {
 
     return (
         <div className="logo-container">
-            <svg width="1000" height="250">
+            <svg
+                className="logo-svg"
+                viewBox="0 0 1000 250"
+                preserveAspectRatio="xMidYMid meet"
+            >
                 <text
                     x="50%"
                     y="50%"
