@@ -47,7 +47,6 @@ function DetailsPage() {
         await addToCart(bookDetails._id)
         setBooksDetails(prev => ({ ...prev, stock: prev.stock - 1 }))
         setIsAdded(true)
-        setTimeout(() => setIsAdded(false), 2000)
     }
 
     if (loading){
