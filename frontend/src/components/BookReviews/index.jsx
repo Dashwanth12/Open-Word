@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAuth, useUser } from '@clerk/clerk-react'
+import BASE_URL from '../../utils/api'
 import './index.css'
 
 function StarRating({ value, onChange, readOnly = false }) {
@@ -42,7 +43,7 @@ function BookReviews({ bookId }) {
     }, [reviews, user])
 
     async function fetchReviews() {
-        const res = await fetch(`http://localhost:5000/api/books/${bookId}/reviews`)
+        const res = await fetch(`${BASE_URL}/api/books/${bookId}/reviews`)
         const data = await res.json()
         setReviews(data.reviews || [])
         setReviewsLoading(false)
@@ -55,7 +56,7 @@ function BookReviews({ bookId }) {
         setSubmitting(true)
 
         const token = await getToken()
-        const res = await fetch(`http://localhost:5000/api/books/${bookId}/reviews`, {
+        const res = await fetch(`${BASE_URL}/api/books/${bookId}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +86,7 @@ function BookReviews({ bookId }) {
     async function handleDelete(reviewId) {
         if (!confirm('Delete your review?')) return
         const token = await getToken()
-        await fetch(`http://localhost:5000/api/books/${bookId}/reviews/${reviewId}`, {
+        await fetch(`${BASE_URL}/api/books/${bookId}/reviews/${reviewId}`, {
             method: 'DELETE',
             headers: { Authorization: `Bearer ${token}` }
         })
