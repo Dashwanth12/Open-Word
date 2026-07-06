@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import {useNavigate} from 'react-router-dom'
 import ViewButton from '../../components/ViewButton'
+import Loader from '../../components/Loader'
 import BookCard from '../../components/BookCard'
 import BASE_URL from '../../utils/api'
 import './index.css'
@@ -41,8 +42,9 @@ function BestSellers() {
 
     if (loading) {
         return (
-            <div className='bst-loader'>
-                <p>Please wait...</p>
+            <div className='books-loader'>
+                <Loader />
+                <p className='books-loader-p'>Please wait...</p>
             </div>
         )
     }
