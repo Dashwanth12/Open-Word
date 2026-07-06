@@ -9,7 +9,7 @@ app.use(cors())
 
 const connectDB = require('./config/db')
 const bookRoute = require('./routes/bookRoute')
-const reviewRoutes = require('./routes/reviewRoutes');
+const reviewRoutes = require('./routes/Reviewroutes')
 const cartRoutes = require('./routes/cartRoute')
 app.use('/api/books/:id/reviews', reviewRoutes);
 app.use('/api/cart', cartRoutes)
