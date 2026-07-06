@@ -78,7 +78,7 @@ function BestSellers() {
         <section className='bst-page'>
             <div className='bst-header'>
                 <p className='section-tag'>Reader's Favourites</p>
-                <h2 className='section-title'>Best Sellers</h2>
+                <h2 className='section-title'>Our Best Sellers</h2>
                 <p className='section-subtitle'>The titles our readers keep coming back to</p>
                 <div className='bst-btn-card'>
                    <ViewButton />
