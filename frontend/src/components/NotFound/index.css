@@ -1,0 +1,155 @@
+/* pages/NotFound/NotFound.css */
+.error-page {
+    min-height: 90vh;
+    background: #fdfbf7;
+    /* Matches your brighter premium background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.error-container {
+    max-width: 580px;
+    text-align: center;
+    background: #fff;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(240, 236, 228, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Typography & Visuals ── */
+.error-visual {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.error-code {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 1;
+    color: rgba(196, 137, 108, 0.15);
+    /* Very soft subtle background brand color text */
+    letter-spacing: -2px;
+    user-select: none;
+}
+
+.error-icon-wrapper {
+    position: absolute;
+    color: #c4896c;
+    /* Elegant metallic rose-gold tone */
+    animation: slow-float 4s ease-in-out infinite;
+}
+
+.error-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.5px;
+}
+
+.error-message {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    color: #7a6e61;
+    line-height: 1.6;
+    margin: 0 0 36px 0;
+    max-width: 440px;
+}
+
+/* ── Call To Actions ── */
+.error-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+}
+
+.error-btn {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+}
+
+.error-btn.primary {
+    background: #1a1a1a;
+    color: #f7f4ef;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.error-btn.primary:hover {
+    background: #c4896c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(196, 137, 108, 0.25);
+}
+
+.error-btn.secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #e3ded5;
+}
+
+.error-btn.secondary:hover {
+    background: #f7f4ef;
+    border-color: #c4896c;
+    color: #c4896c;
+    transform: translateY(-1px);
+}
+
+/* ── Animation ── */
+@keyframes slow-float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+    .error-container {
+        padding: 40px 20px;
+    }
+
+    .error-code {
+        font-size: 6rem;
+    }
+
+    .error-title {
+        font-size: 2rem;
+    }
+
+    .error-actions {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .error-btn {
+        width: 100%;
+    }
+}

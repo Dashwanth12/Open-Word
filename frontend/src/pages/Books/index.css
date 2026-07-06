@@ -1,0 +1,400 @@
+.books-page {
+    display: flex;
+    gap: 0;
+    min-height: 100vh;
+    background: #f7f4ef;
+}
+
+.books-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+    gap: 12px;
+}
+
+.books-loader-p {
+    font-size: 1rem;
+    color: #9e8e7e;
+    font-style: italic;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.books-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    color: #c0392b;
+}
+.books-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.books-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 420px;
+}
+
+.books-search-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.books-search {
+    width: 100%;
+    padding: 15px 200px 15px 45px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: #fff;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.books-search::placeholder {
+    color: #bbb;
+}
+
+.books-search:focus {
+    border-color: #c4896c;
+    box-shadow: 0 0 0 3px rgba(196, 137, 108, 0.1);
+}
+
+.books-search-clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.books-search-clear:hover {
+    color: #c4896c;
+}
+
+
+.books-sidebar {
+    width: 240px;
+    min-width: 220px;
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 40px 24px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.sidebar-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.sidebar-clear {
+    background: none;
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    color: #c4896c;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.sidebar-section {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-section:last-child {
+    border-bottom: none;
+}
+
+.sidebar-section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0 0 16px;
+}
+
+.sidebar-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sidebar-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #c4896c;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.sidebar-option-label {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    color: #444;
+    flex: 1;
+}
+
+.sidebar-option-count {
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ── Main ── */
+.books-main {
+    flex: 1;
+    padding: 40px 40px 60px;
+    min-width: 0;
+}
+
+.books-main-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.books-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+}
+
+.books-count {
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    color: #9e8e7e;
+    margin: 0;
+}
+
+/* ── Active filter tags ── */
+.books-active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fdf0e6;
+    border: 1px solid #c4896c;
+    color: #8b5a2b;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+}
+
+.filter-tag button {
+    background: none;
+    border: none;
+    color: #8b5a2b;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+/* ── Grid ── */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
+}
+
+/* ── Empty state ── */
+.books-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    gap: 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #9e8e7e;
+}
+
+.sidebar-clear-lg {
+    background: #1a1a1a;
+    color: #f7f4ef;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sidebar-clear-lg:hover {
+    background: #c4896c;
+}
+
+/* ── Pagination ── */
+.books-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 60px;
+}
+
+.page-btn {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #1a1a1a;
+    color: #f7f4ef;
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.page-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    color: #1a1a1a;
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-number:hover {
+    border-color: #c4896c;
+    color: #c4896c;
+}
+
+.page-number.active {
+    background: #1a1a1a;
+    color: #f7f4ef;
+    border-color: #1a1a1a;
+}
+
+.page-ellipsis {
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    color: #aaa;
+    padding: 0 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .books-page {
+        flex-direction: column;
+    }
+
+    .books-sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 24px 20px;
+    }
+
+    .sidebar-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar-option {
+        background: #f7f4ef;
+        padding: 6px 12px;
+        border-radius: 100px;
+        font-size: 13px;
+    }
+
+    .books-main {
+        padding: 24px 20px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}

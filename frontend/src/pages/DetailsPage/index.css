@@ -1,0 +1,430 @@
+.det-page {
+    min-height: 100vh;
+    background: #faf9f6; /* Premium soft alabaster background */
+    padding: 60px 8%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #2a2a2a;
+    -webkit-font-smoothing: antialiased;
+}
+
+.det-inner {
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* Elegant back link */
+.det-back {
+    background: none;
+    border: none;
+    color: #8c7662;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.15rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.det-back:hover {
+    color: #1a1a1a;
+    transform: translateX(-4px);
+    text-decoration: none;
+}
+
+/* ── Luxury 3-Column Grid Layout ── */
+.det-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 280px;
+    gap: 64px;
+    align-items: start;
+}
+
+/* ── Premium Book Cover Showcase ── */
+.det-cover-col {
+    position: sticky;
+    top: 60px;
+}
+
+.det-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 
+                0 1px 3px rgba(0, 0, 0, 0.05);
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.det-cover:hover {
+    transform: scale(1.02);
+}
+
+/* ── Editorial Information Column ── */
+.det-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-right: 20px;
+}
+
+.det-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c59b27; /* Rich Gold */
+    background: #fdfaf2;
+    padding: 6px 12px;
+    border: 1px solid rgba(197, 155, 39, 0.2);
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+
+.det-title {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #111111;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+}
+
+.det-author {
+    font-size: 1.20rem;
+    color: #666;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    margin: 0 0 24px;
+}
+
+.det-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.det-genre {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555;
+    background: #eae4d9;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.det-instock {
+    font-size: 0.85rem;
+    color: #c4896c;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.det-outstock {
+    font-size: 0.85rem;
+    color: #b84a39;
+    font-weight: 600;
+}
+
+/* Rating aesthetics */
+.det-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eeeada;
+}
+
+.det-rating-val {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.det-review-count {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* ── Minimalist Premium Tabs ── */
+.det-tabs {
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid #eadecc;
+    margin-bottom: 28px;
+}
+
+.det-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 12px 0;
+    font-size: 1.15rem;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #888;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.det-tab:hover {
+    color: #1a1a1a;
+}
+
+.det-tab.active {
+    color: #1a1a1a;
+    border-bottom-color: #8c7662; /* Chic grounding brown */
+    font-weight: 600;
+}
+
+/* ── Content Panes ── */
+.det-tab-content {
+    min-height: 180px;
+}
+
+.det-description {
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: #444;
+    margin: 0;
+    max-width: 680px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.det-description.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.det-read-more {
+    background: none;
+    border: none;
+    color: #8c7662;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 0 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s;
+}
+
+.det-read-more:hover {
+    color: #1a1a1a;
+}
+
+/* High-end Minimal Data Table */
+.det-details-table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.det-details-table td {
+    padding: 14px 0;
+    border-bottom: 1px solid #eae5da;
+    color: #222;
+}
+
+.det-details-table td:first-child {
+    color: #888;
+    width: 140px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* ── Premium Sidebar Card ── */
+.det-sidebar {
+    position: sticky;
+    top: 60px;
+    background: #ffffff;
+    border: 1px solid #eae5da;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(140, 118, 98, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.det-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.det-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+}
+
+.det-original-price {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #a0958a;
+    font-family: "Quicksand", sans-serif;
+    text-decoration: line-through;
+}
+
+.det-avail {
+    font-size: 0.85rem;
+    color: #c4896c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.det-unavail {
+    font-size: 0.85rem;
+    color: #b84a39;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* Premium Primary Call-To-Action */
+.det-cart-btn {
+    width: 100%;
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 16px 0;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.det-cart-btn:hover:not(:disabled) {
+    background: #3a3a3a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.det-cart-btn:disabled {
+    background: #e5e0d8;
+    color: #a09a90;
+    cursor: not-allowed;
+}
+
+.det-sidebar-divider {
+    height: 1px;
+    background: #eae5da;
+    margin: 8px 0;
+}
+
+.det-sidebar-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.det-sidebar-meta span:first-child {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.det-sidebar-meta span:last-child {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* ── States ── */
+.det-state {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c7662;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    background: #faf9f6;
+}
+
+/* ── Custom Loader Wrapper Overrides ── */
+.books-loader {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #faf9f6;
+}
+.books-loader-p {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: #8c7662;
+    font-size: 1.1rem;
+    margin-top: 16px;
+    letter-spacing: 0.05em;
+}
+
+/* ── Responsive Architecture ── */
+@media (max-width: 1024px) {
+    .det-grid {
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+    }
+    .det-sidebar {
+        grid-column: span 2;
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .det-page {
+        padding: 30px 4%;
+    }
+    .det-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .det-cover-col {
+        position: static;
+    }
+    .det-cover {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+    .det-sidebar {
+        grid-column: span 1;
+    }
+    .det-title {
+        font-size: 2.2rem;
+    }
+    .det-description {
+        max-width: 100%;
+    }
+}

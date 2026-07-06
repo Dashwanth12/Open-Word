@@ -1,0 +1,137 @@
+/* components/BestSellers/index.css */
+.bst-page {
+    padding: 80px 60px;
+    background-color: #eee8de;
+}
+
+.bst-loader,
+.bst-error,
+.bst-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #6f655c;
+}
+
+.bst-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-tag {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 10px;
+}
+.bst-btn-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.section-title {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 70px;
+    letter-spacing: 1px;
+    color: #c4896c;
+    margin: 0 0 10px;
+}
+
+.section-subtitle {
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 1px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* ── carousel wrapper ── */
+.bst-carousel-wrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.bst-grid {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 4px;
+    width: 100%;
+
+    /* hide scrollbar */
+    scrollbar-width: none;
+}
+
+.bst-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.bst-grid-item {
+    flex: 0 0 calc((100% - 3 * 32px) / 4);
+    scroll-snap-align: start;
+    min-width: 0;
+}
+
+/* ── arrows ── */
+.bst-arrow {
+    background: #fff;
+    border: 1px solid rgba(43, 37, 34, 0.1);
+    color: #2b2522;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+    transition: background-color 0.2s ease;
+}
+
+.bst-arrow:hover {
+    background-color: #c4896c;
+    color: #f7f4f0;
+}
+
+.bst-arrow-left {
+    margin-right: 16px;
+}
+
+.bst-arrow-right {
+    margin-left: 16px;
+}
+
+@media (max-width: 1024px) {
+    .bst-grid-item {
+        flex: 0 0 calc((100% - 32px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .bst-page {
+        padding: 50px 20px;
+    }
+
+    .bst-grid-item {
+        flex: 0 0 85%;
+    }
+
+    .bst-arrow {
+        display: none;
+    }
+}

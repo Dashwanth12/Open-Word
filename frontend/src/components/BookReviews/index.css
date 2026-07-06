@@ -1,0 +1,166 @@
+/* ── Stars ── */
+.stars {
+    display: flex;
+    gap: 3px;
+}
+
+.star {
+    font-size: 1.4rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.15s;
+    line-height: 1;
+}
+
+.star.filled {
+    color: #e9a825;
+}
+
+.star.readonly {
+    cursor: default;
+}
+
+/* ── Section ── */
+.reviews-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.reviews-title {
+    font-size: 1.6rem;
+    font-family: "Cormorant Garamond", serif;
+    color: #222;
+    margin: 0;
+}
+
+.reviews-count {
+    font-size: 1rem;
+    color: #c4896c;
+    font-weight: 400;
+}
+
+/* ── Form ── */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #faf8f5;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #ece8e0;
+}
+
+.review-form-label {
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.review-textarea {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.95rem;
+    resize: vertical;
+    font-family: inherit;
+    color: #333;
+    background: white;
+}
+
+.review-textarea:focus {
+    outline: none;
+    border-color: #8b5a2b;
+}
+
+.review-error {
+    color: #c0392b;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.review-submit-btn {
+    width: fit-content;
+    background: #c4896c;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.review-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.review-already,
+.review-signin-prompt,
+.reviews-empty,
+.reviews-loading {
+    color: #333;
+    font-size: 20px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 1px;
+
+}
+
+/* ── List ── */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-card {
+    border-bottom: 1px solid #f0ece4;
+    padding-bottom: 16px;
+}
+
+.review-card:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #333;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-left: auto;
+}
+
+.review-delete-btn {
+    background: none;
+    border: none;
+    color: #c0392b;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.review-delete-btn:hover {
+    text-decoration: underline;
+}
+
+.review-comment {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}

@@ -1,0 +1,84 @@
+/* pages/BestBooks/index.css */
+.bst-book-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f9f7f1;
+    padding: 60px 6%;
+}
+
+.bst-book-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.bst-book-tag {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #8b5a2b;
+    margin: 0 0 10px;
+}
+
+.bst-book-title {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 70px;
+    letter-spacing: 1px;
+    color: #c4896c;
+    margin: 0 0 12px;
+}
+
+.bst-book-subtitle {
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 17px;
+    color: #6f655c;
+    margin: 0;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: stretch;
+}
+
+.bst-loader,
+.bst-error,
+.bst-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #6f655c;
+    background: #f7f4ef;
+}
+
+@media (max-width: 1024px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .bst-book-page {
+        padding: 40px 20px;
+    }
+
+    .bst-book-title {
+        font-size: 42px;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap');
+
+.layout-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background: #eee8de;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(30, 20, 10, 0.1);
+}
+
+.menu-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(30, 20, 10, 0.25);
+    color: #1e140a;
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.menu-toggle-btn:hover {
+    background: #c4896c;
+    color: #f7f4f0;
+    border-color: #c4896c;
+}
+
+.brand-logo {
+    font-family: "Uncial Antiqua", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 12px;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    color: #1e140a;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.cart-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(30, 20, 10, 0.25);
+    padding: 7px 16px;
+    border-radius: 100px;
+    transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.cart-count {
+    font-size: 18px;
+    font-weight: 500;
+    color: #c4896c;
+    letter-spacing: 0.08em;
+    transition: color 0.22s ease;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 16px 24px;
+    }
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-btn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 7px 18px;
+    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.auth-btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(30, 20, 10, 0.25);
+    color: #1e140a;
+}
+
+.auth-btn--ghost:hover {
+    background: #1e140a;
+    color: #f7f4f0;
+    border-color: #1e140a;
+}
+
+.auth-btn--filled {
+    background: #c4896c;
+    border: 1px solid #c4896c;
+    color: #f7f4f0;
+}
+
+.auth-btn--filled:hover {
+    background: #3a2a1a;
+    border-color: #3a2a1a;
+}

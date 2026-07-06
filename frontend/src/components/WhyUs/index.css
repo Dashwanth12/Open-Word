@@ -1,0 +1,112 @@
+/* components/WhyChooseUs/index.css */
+.wcu-page {
+    padding: 80px 6%;
+    background-color: #f7f4ef;
+}
+
+.wcu-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.wcu-tag {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin: 0 0 10px;
+}
+
+.wcu-title {
+    font-family: "Ephesis", cursive;
+    font-weight: 400;
+    font-size: 55px;
+    letter-spacing: 1px;
+    color: #c4896c;
+    margin: 0 0 10px;
+}
+
+.wcu-title::after {
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.wcu-subtitle {
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 17px;
+    color: #6f655c;
+    margin: 0;
+}
+
+.wcu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wcu-card {
+    text-align: center;
+    padding: 36px 24px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wcu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.wcu-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.wcu-card-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px;
+}
+
+.wcu-card-description {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    color: #6f655c;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .wcu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .wcu-page {
+        padding: 50px 20px;
+    }
+
+    .wcu-title {
+        font-size: 42px;
+    }
+
+    .wcu-grid {
+        grid-template-columns: 1fr;
+    }
+}

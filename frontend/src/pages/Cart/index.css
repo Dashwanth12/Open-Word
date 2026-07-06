@@ -1,0 +1,432 @@
+/* pages/Cart/index.css */
+.cart-page {
+    min-height: 100vh;
+    background: #fdfbf7;
+    /* Slightly brighter, cleaner background */
+    padding: 60px 6%;
+}
+
+.cart-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    /* Tweaked width slightly for better proportion */
+    gap: 48px;
+    align-items: start;
+}
+
+/* ── Loader State ── */
+.books-loader {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.books-loader-p {
+    font-family: "Quicksand", sans-serif;
+    color: #9e8e7e;
+    font-size: 15px;
+}
+
+/* ── Empty State ── */
+.cart-empty {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.cart-empty-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.cart-empty-sub {
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #8c7b6c;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cart-browse-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: #1a1a1a;
+    color: #f7f4ef;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-browse-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(196, 137, 108, 0.3);
+}
+
+/* ── Header ── */
+.cart-header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #f0ece4;
+    padding-bottom: 16px;
+}
+
+.cart-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #1a1a1a;
+    /* Cleaner neutral black for primary heading */
+    margin: 0;
+}
+
+.cart-num {
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    color: #c4896c;
+    /* Elegant brand color accent */
+    margin-left: 12px;
+    font-weight: 500;
+}
+
+.cart-clear-btn {
+    background: none;
+    border: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c0392b;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.cart-clear-btn:hover {
+    background: rgba(192, 57, 43, 0.08);
+}
+
+/* ── Items ── */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 95px 1fr auto;
+    gap: 24px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    align-items: center;
+    /* Centered items vertically for a balanced look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(240, 236, 228, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+}
+
+.cart-item-img-link {
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+}
+
+.cart-item-img {
+    width: 95px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover .cart-item-img {
+    transform: scale(1.05);
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cart-item-author {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    color: #777;
+    font-style: italic;
+    margin: 0 0 2px;
+}
+
+.cart-item-genre {
+    font-family: "Quicksand", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #c4896c;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cart-item-bottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ── Qty control ── */
+.cart-qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f7f4ef;
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid #eee;
+}
+
+.cart-qty-btn {
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    color: #1a1a1a;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s;
+}
+
+.cart-qty-btn:hover {
+    color: #fff;
+    background: #c4896c;
+}
+
+.cart-qty {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    min-width: 28px;
+    text-align: center;
+}
+
+.cart-remove-btn {
+    background: none;
+    border: none;
+    color: #a3a3a3;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cart-remove-btn:hover {
+    color: #c0392b;
+    background: rgba(192, 57, 43, 0.08);
+}
+
+/* ── Price ── */
+.cart-item-price {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 90px;
+}
+
+.cart-item-unit-price {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.cart-item-total-price {
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    color: #9e8e7e;
+    margin: 4px 0 0;
+    font-weight: 500;
+}
+
+/* ── Summary Card ── */
+.cart-summary {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    position: sticky;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(240, 236, 228, 0.6);
+}
+
+.cart-summary-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+    border-bottom: 2px solid #f7f4ef;
+    padding-bottom: 12px;
+}
+
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.cart-summary-value {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.cart-free {
+    color: #c4896c;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.cart-summary-divider {
+    height: 1px;
+    background: #f0ece4;
+    margin: 4px 0;
+}
+
+.cart-summary-total {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.cart-checkout-btn {
+    width: 100%;
+    background: #1a1a1a;
+    color: #f7f4ef;
+    border: none;
+    padding: 16px 0;
+    border-radius: 8px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 8px;
+}
+
+.cart-checkout-btn:hover {
+    background: #c4896c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(196, 137, 108, 0.25);
+}
+
+.cart-checkout-btn:active {
+    transform: translateY(0);
+}
+
+.cart-continue-link {
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9e8e7e;
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-top: 4px;
+}
+
+.cart-continue-link:hover {
+    color: #c4896c;
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 960px) {
+    .cart-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .cart-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 650px) {
+    .cart-page {
+        padding: 30px 16px;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        gap: 16px;
+        padding: 16px;
+        align-items: start;
+    }
+
+    .cart-item-price {
+        grid-column: 2;
+        text-align: left;
+        margin-top: 8px;
+        min-width: auto;
+    }
+}
