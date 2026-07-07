@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader'
-import {useAuth} from '@clerk/clerk-react'
-import {useCart} from '../../context/CartContext'
-import {useClerk} from '@clerk/clerk-react'
+import { useAuth } from '@clerk/clerk-react'
+import { useCart } from '../../context/CartContext'
+import { useClerk } from '@clerk/clerk-react'
 import BASE_URL from '../../utils/api'
 import BookReviews, { StarRating } from '../../components/BookReviews'
 import './index.css'
@@ -14,11 +14,12 @@ function DetailsPage() {
     const [error, setError] = useState(false)
     const [activeTab, setActiveTab] = useState('description')
     const [expanded, setExpanded] = useState(false)
-    const {addToCart} = useCart()
-    const {isSignedIn} = useAuth()
-    const {openSignIn} = useClerk() 
-    const { id } = useParams()
+    const [similarBooks, setSimilarBooks] = useState([])
     const [isAdded, setIsAdded] = useState(false)
+    const { addToCart } = useCart()
+    const { isSignedIn } = useAuth()
+    const { openSignIn } = useClerk()
+    const { id } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -42,6 +43,22 @@ function DetailsPage() {
         fetchBookDetails()
     }, [id])
 
+    useEffect(() => {
+        if (!bookDetails?.genre) return
+        const fetchSimilar = async () => {
+            try {
+                const res = await fetch(`${BASE_URL}/api/books?genre=${bookDetails.genre}`)
+                if (res.ok) {
+                    const data = await res.json()
+                    setSimilarBooks((data.books || []).filter(b => b._id !== id).slice(0, 8))
+                }
+            } catch (err) {
+                console.log('similar books error:', err)
+            }
+        }
+        fetchSimilar()
+    }, [bookDetails?.genre])
+
     const handleAddToCart = async () => {
         if (!isSignedIn) { openSignIn(); return }
         await addToCart(bookDetails._id)
@@ -50,11 +67,11 @@ function DetailsPage() {
         setTimeout(() => setIsAdded(false), 2000)
     }
 
-    if (loading){
+    if (loading) {
         return (
             <div className='books-loader'>
-            <Loader />
-            <p className='books-loader-p'>Please wait...</p>
+                <Loader />
+                <p className='books-loader-p'>Please wait...</p>
             </div>
         )
     }
@@ -76,6 +93,7 @@ function DetailsPage() {
 
                 <div className="det-grid">
 
+                    {/* Col 1 — Cover */}
                     <div className="det-cover-col">
                         <img
                             src={bookDetails.image}
@@ -84,6 +102,7 @@ function DetailsPage() {
                         />
                     </div>
 
+                    {/* Col 2 — Info */}
                     <div className="det-info-col">
                         {bookDetails.bestSeller && (
                             <span className="det-badge">#1 Best Seller</span>
@@ -162,7 +181,6 @@ function DetailsPage() {
                             <p className="det-price">
                                 ₹{Number(bookDetails.price).toFixed(2)}
                             </p>
-
                             {bookDetails.originalPrice && bookDetails.originalPrice > bookDetails.price && (
                                 <p className="det-original-price">
                                     ₹{Number(bookDetails.originalPrice).toFixed(2)}
@@ -175,8 +193,12 @@ function DetailsPage() {
                             : <p className="det-unavail">Out of stock</p>
                         }
 
-                        <button className="det-cart-btn" disabled={bookDetails.stock === 0} onClick={handleAddToCart}>
-                            {bookDetails.stock === 0 ? 'Out of Stock' : isAdded ? 'Adding to Cart...' : 'Add to Cart'}
+                        <button
+                            className="det-cart-btn"
+                            disabled={bookDetails.stock === 0}
+                            onClick={handleAddToCart}
+                        >
+                            {bookDetails.stock === 0 ? 'Out of Stock' : isAdded ? '✓ Added to Cart' : 'Add to Cart'}
                         </button>
 
                         <div className="det-sidebar-divider" />
@@ -188,6 +210,28 @@ function DetailsPage() {
                     </div>
 
                 </div>
+
+                {/* ── Similar Books ── */}
+                {similarBooks.length > 0 && (
+                    <div className='det-similar'>
+                        <h3 className='det-similar-title'>You Might Also Like</h3>
+                        <div className='det-similar-grid'>
+                            {similarBooks.map(book => (
+                                <div
+                                    key={book._id}
+                                    className='det-similar-card'
+                                    onClick={() => navigate(`/books/${book._id}`)}
+                                >
+                                    <img src={book.image} alt={book.title} className='det-similar-img' />
+                                    <p className='det-similar-book-title'>{book.title}</p>
+                                    <p className='det-similar-author'>{book.author}</p>
+                                    <p className='det-similar-price'>₹{Number(book.price).toFixed(0)}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
             </div>
         </div>
     )
