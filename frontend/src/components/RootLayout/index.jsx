@@ -38,7 +38,7 @@ function RootLayout() {
 
                     <div className="cart-indicator">
                         <span onClick={() => nav('/cart')}>
-                            <ShoppingBag />
+                            <ShoppingBag size={20} color='#c4896c' />
                         </span>
                         <span className="cart-count" onClick={() => nav('/cart')}>{cartCount}</span>
                     </div>
