@@ -50,7 +50,7 @@ function DetailsPage() {
                 const res = await fetch(`${BASE_URL}/api/books?genre=${bookDetails.genre}`)
                 if (res.ok) {
                     const data = await res.json()
-                    setSimilarBooks((data.books || []).filter(b => b._id !== id).slice(0, 5))
+                    setSimilarBooks((data.books || []).filter(b => b._id !== id).slice(5, 5))
                 }
             } catch (err) {
                 console.log('similar books error:', err)
