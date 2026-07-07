@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import Footer from '../../components/Footer'
+import { ShoppingBag } from 'lucide-react';
 import {useCart} from '../../context/CartContext'
 import Sidebar from '../Sidebar';
 import './index.css';
@@ -36,7 +37,9 @@ function RootLayout() {
                     )}
 
                     <div className="cart-indicator">
-                        <span onClick={() => nav('/cart')}>🛒</span>
+                        <span onClick={() => nav('/cart')}>
+                            <ShoppingBag />
+                        </span>
                         <span className="cart-count" onClick={() => nav('/cart')}>{cartCount}</span>
                     </div>
                 </div>
