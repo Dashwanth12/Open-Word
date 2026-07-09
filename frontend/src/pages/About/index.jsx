@@ -42,6 +42,7 @@ function About() {
                 <p className="about-subtitle">
                     A small, independent bookstore built for people who still fall in love with a story.
                 </p>
+                <p className="about-support-email">support@openwordbooks.com</p>
             </section>
 
             {/* ── Story ── */}
