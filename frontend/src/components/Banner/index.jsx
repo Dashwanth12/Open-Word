@@ -37,6 +37,7 @@ function Banner() {
             </div>
 
             <blockquote className="hero-quote">
+                <p>support@openword.com</p>
                 <p>OPEN: MON - FRI: 11:00AM - 6:30PM</p>
             </blockquote>
         </section>

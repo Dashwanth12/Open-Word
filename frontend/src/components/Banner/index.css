@@ -141,6 +141,11 @@
     gap: 14px;
     flex-wrap: wrap;
 }
+.hero-quote-email {
+    opacity: 0.75;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
 
 .primary-btn {
     padding: 18px;
