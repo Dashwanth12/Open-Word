@@ -6,7 +6,7 @@ import './index.css';
 const navLinks = [
     { label: 'Home', path: '/home' },
     { label: 'About', path: '/about' },
-    { label: 'Books', path: '/books' },
+    { label: 'Browse', path: '/books' },
     { label: 'Best Sellers', path: '/bestSellers' },
     {label: 'Cart', path: '/cart'}
 ];
