@@ -127,7 +127,6 @@ function Checkout() {
                     </form>
                 </div>
 
-                {/* ── Right: summary ── */}
                 <div className='checkout-summary'>
                     <h2 className='checkout-summary-title'>Order Summary</h2>
                     <div className='checkout-summary-items'>
