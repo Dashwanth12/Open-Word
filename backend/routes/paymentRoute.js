@@ -4,7 +4,7 @@ const {createOrder, verifyPayment} = require('../controllers/paymentController')
 const {requireAuth} = require('../middlewares/authMiddleware') 
 
 router.use(requireAuth)
-router.post('/createOrder', createOrder)
+router.post('/createorder', createOrder)
 router.post('/verify', verifyPayment)
 
 module.exports = router
