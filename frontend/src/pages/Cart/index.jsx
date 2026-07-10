@@ -128,7 +128,7 @@ function Cart() {
                         <span>₹{cartTotal.toFixed(0)}</span>
                     </div>
 
-                    <button className='cart-checkout-btn'>
+                    <button className='cart-checkout-btn' onClick={() => navigate('/checkout')}>
                         Proceed to Checkout
                     </button>
 

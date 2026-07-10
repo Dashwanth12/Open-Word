@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import RootLayout from './components/RootLayout'
 import About from './pages/About'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 import BestBooks from './pages/BestBooks'
 import DetailsPage from './pages/DetailsPage'
 import NotFound from './components/NotFound'
@@ -41,6 +42,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/books/:id' element={<DetailsPage />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Route>
 
         <Route

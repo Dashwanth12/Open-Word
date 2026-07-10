@@ -18,8 +18,10 @@ const connectDB = require('./config/db')
 const bookRoute = require('./routes/bookRoute')
 const reviewRoutes = require('./routes/Reviewroutes')
 const cartRoutes = require('./routes/cartRoute')
+const paymentRoutes = require('./routes/paymentRoute')
 app.use('/api/books/:id/reviews', reviewRoutes);
 app.use('/api/cart', cartRoutes)
+app.use('/api/payment', paymentRoutes)
 
 // port
 
