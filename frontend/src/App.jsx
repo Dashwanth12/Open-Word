@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import RootLayout from './components/RootLayout'
 import About from './pages/About'
 import Cart from './pages/Cart'
+import OrderSuccess from './pages/OrderSuccess'
 import Checkout from './pages/Checkout'
 import BestBooks from './pages/BestBooks'
 import DetailsPage from './pages/DetailsPage'
@@ -55,6 +56,7 @@ function App() {
         >
           <Route index element={<AdminDashboard />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/order-success' elemen={<OrderSuccess />} />
         </Route>
 
       </Routes>
