@@ -44,6 +44,7 @@ function App() {
           <Route path='/books/:id' element={<DetailsPage />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/order-success' elemen={<OrderSuccess />} />
         </Route>
 
         <Route
@@ -56,7 +57,7 @@ function App() {
         >
           <Route index element={<AdminDashboard />} />
           <Route path='*' element={<NotFound />} />
-          <Route path='/order-success' elemen={<OrderSuccess />} />
+          
         </Route>
 
       </Routes>
