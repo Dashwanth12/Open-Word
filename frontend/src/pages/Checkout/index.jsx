@@ -20,6 +20,7 @@ function Checkout() {
 
     async function handlePayment(e) {
         e.preventDefault()
+        console.log('cartTotal:', cartTotal)
         setPaying(true)
 
         try {
