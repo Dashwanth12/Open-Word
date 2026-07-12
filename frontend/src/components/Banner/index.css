@@ -130,9 +130,19 @@
 }
 .hero-title-uncial {
     font-family: "Uncial Antiqua", system-ui;
-    font-style: normal;
-    color: #c4896c;
-    letter-spacing: 0.08em;
+        font-style: normal;
+        letter-spacing: 0.08em;
+    
+        background: linear-gradient(135deg,
+                #c4896c 0%,
+                #ddb49a 35%,
+                #ffffff 70%,
+                #f7f4ee 100%);
+    
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
 }
 
 .hero-buttons {
