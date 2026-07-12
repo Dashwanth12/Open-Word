@@ -111,10 +111,7 @@
     font-weight: 500;
 }
 
-.hero-title-outline {
-    color: transparent;
-    -webkit-text-stroke: 2px #f7f4ee;
-}
+
 
 .hero-description {
     font-family: 'Cormorant Garamond', serif;
@@ -139,13 +136,20 @@
             #e9d6c7 80%,
             #d4a385 100%);
     background-size: 200% 100%;
+    background-position: 200% 50%;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
 
-    animation: shimmer 4s linear infinite;
+    animation: shimmer 2.5s ease-out forwards;
+}
+
+.hero-title-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #d4a385;
+    animation: shimmerStroke 2.5s ease-out forwards;
 }
 
 @keyframes shimmer {
@@ -155,6 +159,32 @@
 
     100% {
         background-position: 200% 50%;
+    }
+}
+
+@keyframes shimmerStroke {
+    0% {
+        -webkit-text-stroke-color: #c4896c;
+    }
+
+    25% {
+        -webkit-text-stroke-color: #d4a385;
+    }
+
+    50% {
+        -webkit-text-stroke-color: #e9d6c7;
+    }
+
+    65% {
+        -webkit-text-stroke-color: #ffffff;
+    }
+
+    80% {
+        -webkit-text-stroke-color: #e9d6c7;
+    }
+
+    100% {
+        -webkit-text-stroke-color: #d4a385;
     }
 }
 
