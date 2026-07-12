@@ -129,12 +129,12 @@
     letter-spacing: 0.08em;
 
     background: linear-gradient(90deg,
-            #6f431f 0%,
-            #6f432f 25%,
+            #c4896c 0%,
+            #d4a385 25%,
             #e9d6c7 50%,
             #ffffff 65%,
             #e9d6c7 80%,
-            #6f432f 100%);
+            #d4a385 100%);
     background-size: 200% 100%;
     background-position: 200% 50%;
 
@@ -148,7 +148,7 @@
 
 .hero-title-outline {
     color: transparent;
-    -webkit-text-stroke: 2px #6f431f;
+    -webkit-text-stroke: 2px #d4a385;
     animation: shimmerStroke 2.5s ease-out forwards;
 }
 
@@ -164,7 +164,7 @@
 
 @keyframes shimmerStroke {
     0% {
-        -webkit-text-stroke-color: #6f432f;
+        -webkit-text-stroke-color: #c4896c;
     }
 
     25% {
@@ -184,7 +184,7 @@
     }
 
     100% {
-        -webkit-text-stroke-color: #6f432f;
+        -webkit-text-stroke-color: #d4a385;
     }
 }
 
