@@ -11,7 +11,9 @@ const getCart = async (req,res) => {
         if (!cart){
             return res.json({cart: {items: []}})
         }
-        res.json({ cart })
+        cart.items = cart.items.filter(item => item.book !== null)
+        await cart.save()
+        res.json({cart})
     }catch(err){
         console.log('getCart error:', err)
         res.status(500).json({ message: 'Failed to fetch cart' })
